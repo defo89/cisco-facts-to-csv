@@ -1,6 +1,6 @@
 ## Cisco Facts to CSV
 
-Small scripts to collect information from Cisco devices running IOS or IOS-XE software and write it into a CSV file.
+Small scripts to collect information from Cisco devices running IOS or IOS-XE software and write it to a CSV file.
 
 IP and hostname are present in every row for easier filtering.
 
