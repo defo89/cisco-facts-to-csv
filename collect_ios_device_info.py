@@ -70,6 +70,9 @@ for ios_ip in IOS_IP_LIST:
         template_version = open(TEMPLATE_IOS_SHOW_VERSION)
         re_table_version = textfsm.TextFSM(template_version)
 
+        # enter enable mode
+        ios_conn.enable()
+
         # Execute a show command and run TextFSM template against the output
         fsm_input_version = ios_conn.send_command('show version')
         fsm_results_version = re_table_version.ParseText(fsm_input_version)
@@ -88,6 +91,9 @@ for ios_ip in IOS_IP_LIST:
         write_csv_row(FILE_CSV_OUTPUT, dict_result)
 
         print ('Wrote results for %s' % ios_ip)
+
+        # close the SSH connection
+        ios_conn.disconnect()
 
     except socket.gaierror:
         print ('Could not connect to %s' % ios_ip)

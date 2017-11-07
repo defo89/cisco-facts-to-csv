@@ -71,6 +71,9 @@ for ios_ip in IOS_IP_LIST:
         template_cdp = open(TEMPLATE_IOS_SHOW_CDP)
         re_table_cdp = textfsm.TextFSM(template_cdp)
 
+        # enter enable mode
+        ios_conn.enable()
+
         # Execute a show command and run TextFSM template against the output
         fsm_input_cdp = ios_conn.send_command('show cdp neighbors detail')
         fsm_results_cdp = re_table_cdp.ParseText(fsm_input_cdp)
@@ -95,6 +98,9 @@ for ios_ip in IOS_IP_LIST:
             write_csv_row(FILE_CSV_OUTPUT, dict_result)
 
         print ('Wrote results for %s' % ios_ip)
+
+        # close the SSH connection
+        ios_conn.disconnect()
 
     except socket.gaierror:
         print ('Could not connect to %s' % ios_ip)
