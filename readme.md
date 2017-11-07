@@ -14,7 +14,7 @@ Requires Python 2
 git clone https://github.com/dmitrijsf/cisco-facts-to-csv.git
 cd cisco-facts-to-csv
 pip install -r requirements.txt
-chmod u+x ./collect_cdp_neighbors.py
+chmod u+x ./collect_cdp_neighbors.py ./collect_ios_switch_info.py
 ```
 
 ## Usage
