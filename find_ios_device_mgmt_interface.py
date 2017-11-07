@@ -90,6 +90,7 @@ for ios_ip in IOS_IP_LIST:
         # Find interface for management IP address
         for key in fsm_results_show_interfaces:
             if ios_ip in key[7]:
+            # When IP is found, write results to CSV
                 # Fill the dictionary with required keys-values
                 dict_result['ip'] = ios_ip
                 dict_result['hostname'] = fsm_results_version[0][2]
@@ -99,9 +100,6 @@ for ios_ip in IOS_IP_LIST:
                 write_csv_row(FILE_CSV_OUTPUT, dict_result)
 
                 print ('Wrote results for %s' % ios_ip)
-            else:
-                print ('Desired management IP %s not cofigured' % ios_ip)
-                continue
 
         # close the SSH connection
         ios_conn.disconnect()
