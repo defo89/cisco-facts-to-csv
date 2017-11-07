@@ -23,9 +23,9 @@ Run the desired script, enter credentials, choose your list and enter the filena
 
 | Script        				 | Supported Devices     | Output/Gathered facts  										  |
 | -------------------------------|-----------------------| ---------------------------------------------------------------|
-| collect_ios_cdp_neighbors      | any Cisco IOS, IOS-XE | Local and local interface, remote device hostname and model    |
-| collect_ios_device_info        | any Cisco IOS, IOS-XE | Hostname, model, version, SNMP location, uptime 				  |
-| find_ios_device_mgmt_interface | any Cisco IOS, IOS-XE | Hostname, management IP with subnet mask, management interface |
+| collect_ios_cdp_neighbors      | Cisco IOS, IOS-XE 	 | Remote and local interface, remote device hostname and model   |
+| collect_ios_device_info        | Cisco IOS, IOS-XE 	 | Hostname, model, version, SNMP location, uptime 				  |
+| find_ios_device_mgmt_interface | Cisco IOS, IOS-XE 	 | Hostname, management IP with subnet mask, management interface |
 
 **Example usage**
 
