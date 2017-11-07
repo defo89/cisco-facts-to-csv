@@ -2,7 +2,7 @@
 
 '''
 This script takes a list of Cisco IOS devices as input,
-collects CDP neighbors and writes results to a csv file
+collects CDP neighbors and writes results to a csv file.
 '''
 
 from __future__ import print_function
