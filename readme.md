@@ -21,6 +21,13 @@ pip install -r requirements.txt
 Create a list of IP addreses in project folder.
 Run the desired script, enter credentials, choose your list and enter the filename of an output CSV file.
 
+| Script        				 | Supported Devices     | Output/Gathered facts  										  |
+| -------------------------------|:---------------------:| --------------------------------------------------------------:|
+| collect_ios_cdp_neighbors      | any Cisco IOS, IOS-XE | Local and local interface, remote device hostname and model    |
+| collect_ios_device_info        | any Cisco IOS, IOS-XE | Hostname, model, version, SNMP location, uptime 				  |
+| find_ios_device_mgmt_interface | any Cisco IOS, IOS-XE | Hostname, management IP with subnet mask, management interface |
+
+**Example usage**
 
 Create a list with Cisco devices
 ```
@@ -55,6 +62,11 @@ IP Address,Hostname,Local Interface,Remote Hostname,Remote Platform,Remote Inter
 10.5.1.2,switch5,GigabitEthernet1/0/11,remote_switch21.lab.net,cisco WS-C2960S-24PS-L,GigabitEthernet1/0/28
 10.5.1.2,switch5,GigabitEthernet2/0/24,remote_switch22.lab.net,cisco WS-C3850-48T,GigabitEthernet1/0/46
 ```
+
+## Roadmap
+
+Consolidation into a multi-choice single script.
+Leverage OOP, creating classes with methods for repeatable tasks.
 
 ## Credits
 
